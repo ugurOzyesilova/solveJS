@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+*::-webkit-scrollbar {
+  width:1px;
+}
+
+.App {
+  background-color: #0e1212;
+}
+
+.nav {
+  color: #5b2ace;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.nav h1 {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #5b2ace;
+}
+
+.homepage {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage__content {
+  width: 60vw;
+  min-width: 300px;
+  height: 60vh;
+}
+
+.homepage__content h2 {
+  color: #efefef;
+}
+.homepage__content h2 > span {
+  color: #656565;
+}
+.homepage__content h2 > span:nth-child(2) {
+  color: #5b2ace;
+}
+
+.homepage__content ul {
+  height: 100%;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  margin-top: 20px;
+}
+
+.homepage__content ul::-webkit-scrollbar,
+.solution__outputs::-webkit-scrollbar {
+  width: 3px;
+}
+
+.homepage__content ul::-webkit-scrollbar-track,
+.solution__outputs::-webkit-scrollbar-track {
+  background: #0e1212;
+  border-radius: 20px;
+}
+
+.homepage__content ul::-webkit-scrollbar-thumb,
+.solution__outputs::-webkit-scrollbar-thumb {
+  background: #5b2ace;
+  border-radius: 20px;
+}
+
+.homepage__content li,
+.link {
+  list-style: none;
+  text-decoration: none;
+  color: #656565;
+  margin: 0 5px 10px 5px;
+  border-radius: 3px;
+}
+.link {
+
+  margin: 0;
+}
+
+.homepage__content li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  position:relative;
+}
+
+.question__check {
+  position:absolute;
+  left:2px;
+}
+
+
+
+@media (max-width: 728px) {
+  .homepage__content li {
+    font-size: clamp(0.6rem, 1vw, 1rem);
+  }
+}
+
+.homepage__content li > button {
+  background: none;
+  border: none;
+  color: #656565;
+  font-weight: bold;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+}
+
+.homepage__content li span {
+  color: #5b2ace;
+  padding: 0 2px;
+}
+
+
+
+.problemdetailspage {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  display: flex;
+}
+
+@media (max-width: 728px) {
+  .problemdetailspage {
+    flex-direction: column !important;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+    height: 110vh;
+  }
+}
+
+.solution {
+  position: absolute;
+  height: 95vh;
+  width: 50%;
+  background: #000;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 728px) {
+  .solution {
+    width: 100%;
+    height: 45vh;
+  }
+}
+
+.solution__buttons {
+  display: flex;
+  aling-items: center;
+  width: 100%;
+  height: 10vh;
+}
+
+@media (max-width: 728px) {
+  .solution__buttons {
+    justify-content: space-around;
+    background: #000;
+  }
+}
+
+.solution button {
+  align-self: center;
+  padding: 10px;
+  margin: 0 0 0 15px;
+  color: #efefef;
+  background: #5b2ace;
+  border: none;
+  border-radius: 10px;
+}
+
+@media (max-width: 728px) {
+  .solution button {
+    font-size: clamp(0.6rem, 1vw, 1rem);
+    margin: 0;
+  }
+}
+
+.solution__outputs {
+  overflow-y: scroll;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.solution__modal {
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+}
+
+.solution__modal nav {
+  display: flex;
+  color: #5b2ace;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+@media (max-width: 728px) {
+  .solution__outputs {
+    height: 40vh;
+    background: #000;
+  }
+}
+
+.solution__outputs span {
+  width: 100%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  padding: 5px 20px;
+  background: #000;
+  color: #5b2ace;
+}
+
+.problem {
+  height: 100%;
+  width: 50%;
+  padding: 10vh;
+}
+
+@media (max-width: 728px) {
+  .problem {
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    width: 100%;
+    height: 50vh;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+}
+.problem h3 {
+  margin-bottom: 10px;
+  color: #efefef;
+}
+
+.problem p {
+  color: #656565;
+}
+
+.problem__description {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem__description > span {
+  color: #656565;
+}
+
+.problem__description > span span {
+  color: #efefef;
+}
